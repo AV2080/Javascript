@@ -1,0 +1,78 @@
+> var s = "JavaScript'
+var s = "JavaScript'
+        ^^^^^^^^^^^^
+
+Uncaught SyntaxError: Invalid or unexpected token
+> var s = 'JavaScript'
+undefined
+> s
+'JavaScript'
+> Eu estou estudando s
+Eu estou estudando s
+   ^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> 'Eu estou estudando s"
+'Eu estou estudando s"
+^^^^^^^^^^^^^^^^^^^^^^
+
+Uncaught SyntaxError: Invalid or unexpected token
+> 'Eu estou estudando s'"
+'Eu estou estudando s'"
+                      ^
+
+Uncaught SyntaxError: Invalid or unexpected token
+> 'Eu estou estudando s'
+'Eu estou estudando s'
+> 'Eu estou estudando ' + s
+'Eu estou estudando JavaScript'
+>
+> nome = 'Alexandre'
+'Alexandre'
+> idade = 42
+42
+> nota = 8.5
+8.5
+> nome
+'Alexandre'
+> idade
+42
+> nota
+8.5
+> 'O aluno ' + nome + ' com ' + idadi + ' anos, tirou a nota ' + nota
+Uncaught ReferenceError: idadi is not defined
+> 'O aluno ' + nome + ' com ' + idadei + ' anos, tirou a nota ' + nota
+Uncaught ReferenceError: idadei is not defined
+> 'O aluno ' + nome + ' com ' + idade + ' anos, tirou a nota ' + nota
+'O aluno Alexandre com 42 anos, tirou a nota 8.5'
+> `O aluno $(nome) com $(idade), tirou a nota $(nota)`
+'O aluno $(nome) com $(idade), tirou a nota $(nota)'
+> `O aluno ${nome} com ${idade}, tirou a nota ${nota}`
+'O aluno Alexandre com 42, tirou a nota 8.5'
+> var n1 = 1545.5
+undefined
+> n1
+1545.5
+> n1n.toFixed(2)
+Uncaught ReferenceError: n1n is not defined
+> n1.toFixed(2)
+'1545.50'
+> n1.toFixed(2).replace('.', ",")
+'1545,50'
+> n1.toLocaleString('pt-br'), {style: 'curency', currency: 'BRL'})
+n1.toLocaleString('pt-br'), {style: 'curency', currency: 'BRL'}) 
+                                                               ^
+
+Uncaught SyntaxError: Unexpected token ')'
+> n1.toLocaleString('pt-br'), {style: 'curency', currency: 'BRL'}
+{ style: 'curency', currency: 'BRL' }
+> n1.toLocaleString('pt-br', {style: 'curency', currency: 'BRL'})
+Uncaught:
+RangeError: Value curency out of range for Number.prototype.toLocaleString options property style
+    at Number.toLocaleString (<anonymous>)
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+'R$ 1.545,50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+'US$ 1.545,50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+'€ 1.545,50'
